@@ -43,7 +43,7 @@ int main () {
         cin >> menyVal;
 
         switch (menyVal) {
-            case 'I':
+            case 'I': case 'i':
                 cout << "\n\nAktuellt saldo är: ";
                 cout << saldo;
                 cout << "\n\nAnge belopp att sätta in: ";
@@ -54,7 +54,7 @@ int main () {
                 cout << "\n\nTryck 0 för att komma vidare\n";
                 cin >> insBelopp;
                 break;
-            case 'U':
+            case 'U': case 'u':
                 cout << "\n\nAktuellt saldo är: ";
                 cout << saldo;
                 cout << "\n\nAnge belopp att ta ut: ";
@@ -65,13 +65,13 @@ int main () {
                 cout << "\n\nTryck 0 för att komma vidare\n";
                 cin >> insBelopp;
                 break;
-            case 'S':
+            case 'S': case 's':
                 cout << "\nDitt saldo är: ";
                 cout << saldo;
                 cout << "\n\nTryck 0 för att komma vidare\n";
                 cin >> insBelopp;
                 break;   
-            case 'R':
+            case 'R': case 'r':
                 cout << "\nHur mycket pengar är ditt mål att ha på kontot?: ";
                 cin >> malSaldo;
                 cout << "\nHur mycket kan du sätta in varje månad?: ";
@@ -90,7 +90,7 @@ int main () {
                 cout << "\n\nTryck 0 för att komma vidare\n";
                 cin >> insBelopp;
                 break;
-            case 'A':
+            case 'A': case 'a':
                 cout << "\n\nTack för att du använde banksimulatorn!\n\n";
                 return 0;   
             default:
