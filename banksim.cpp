@@ -19,7 +19,10 @@ utifrån angiven ränta, aktuellt saldo och storlek på månadsinsättningen.
 using namespace std;
 
 char menyVal;
-int insBelopp = 0, saldo = 0, uttagsBelopp = 0;
+double insBelopp = 0, uttagsBelopp = 0;
+double mIns, rSats;
+int antalAr = 0;
+double tempSaldo = 0, saldo = 0, malSaldo;
 
 int main () {
 
@@ -41,6 +44,8 @@ int main () {
 
         switch (menyVal) {
             case 'I':
+                cout << "\n\nAktuellt saldo är: ";
+                cout << saldo;
                 cout << "\n\nAnge belopp att sätta in: ";
                 cin >> insBelopp; 
                 saldo = saldo + insBelopp;
@@ -50,6 +55,8 @@ int main () {
                 cin >> insBelopp;
                 break;
             case 'U':
+                cout << "\n\nAktuellt saldo är: ";
+                cout << saldo;
                 cout << "\n\nAnge belopp att ta ut: ";
                 cin >> uttagsBelopp; 
                 saldo = saldo - uttagsBelopp;
@@ -58,6 +65,40 @@ int main () {
                 cout << "\n\nTryck 0 för att komma vidare\n";
                 cin >> insBelopp;
                 break;
+            case 'S':
+                cout << "\nDitt saldo är: ";
+                cout << saldo;
+                cout << "\n\nTryck 0 för att komma vidare\n";
+                cin >> insBelopp;
+                break;   
+            case 'R':
+                cout << "\nHur mycket pengar är ditt mål att ha på kontot?: ";
+                cin >> malSaldo;
+                cout << "\nHur mycket kan du sätta in varje månad?: ";
+                cin >> mIns;
+                cout << "\nAnge räntesats i procent: ";
+                cin >> rSats;
+                cout << "\nDitt nuvarande saldo är: ";
+                cout << saldo;
+                tempSaldo = saldo;
+                while (tempSaldo < malSaldo) {
+                        tempSaldo = (tempSaldo * (1 + rSats / 100) + (mIns * 12));
+                        antalAr++;
+                }
+                cout << "\nDu kommer att uppnå ditt målsaldo efter " << antalAr << " år";
+                cout << "\nDitt saldo efter " << antalAr << " år är " << tempSaldo;
+                cout << "\n\nTryck 0 för att komma vidare\n";
+                cin >> insBelopp;
+                break;
+            case 'A':
+                cout << "\n\nTack för att du använde banksimulatorn!\n\n";
+                return 0;   
+            default:
+                cout << "\n\nOgiltigt menyval! Försök igen";
+                cout << "\n\nTryck 0 för att komma vidare\n";
+                cin >> insBelopp;
+                break;
+                
             
 
         }
