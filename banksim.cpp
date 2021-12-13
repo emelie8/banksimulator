@@ -39,6 +39,10 @@ int antalAr = 0;
 
 double tempSaldo = 0, saldo = 0, malSaldo;
 
+// Variabel för att hålla en tillfällig sträng för att kontrollera vad användaren har matat in
+
+string tempString;
+
 // Funktionen main() returnerar ett heltalsvärde (int)
 
 int main () {
@@ -64,7 +68,16 @@ int main () {
         // Läs in användarens menyval och lagra svaret i en variabel
 
         cout << "\n\nAnge menyval: ";
-        cin >> menyVal;
+        cin >> tempString;
+
+        // Kontrollera så att endast ett tecken angess
+
+        if(tempString.length() != 1) {
+            cout << "Ogiltigt val! Endast ett tecken får anges! I, U, S, R eller A är tillåtna!";
+            menyVal = 'x';
+        } else {
+            menyVal = tempString[0];
+        }
 
         // En switch för att hantera alla de olika menyvalen
 
