@@ -100,7 +100,7 @@ int main () {
                 cout << "\n\nAktuellt saldo är: ";
                 cout << saldo;
                 cout << "\n\nAnge belopp att sätta in: ";
-		cin >> tempString;
+		        cin >> tempString;
                 if (check_number(tempString))
                     insBelopp = stoi(tempString);
                 else {
