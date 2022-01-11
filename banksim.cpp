@@ -45,6 +45,15 @@ double tempSaldo = 0, saldo = 0, malSaldo;
 
 string tempString;
 
+// Funktion för att kontrollera om inmatat värde är en siffra
+
+bool check_number(string str) {
+   for (int i = 0; i < str.length(); i++)
+   if (isdigit(str[i]) == false)
+      return false;
+    return true;
+}
+
 // Funktionen main() returnerar ett heltalsvärde (int)
 
 int main () {
@@ -93,7 +102,15 @@ int main () {
                 cout << "\n\nAktuellt saldo är: ";
                 cout << saldo;
                 cout << "\n\nAnge belopp att sätta in: ";
-                cin >> insBelopp; 
+		        cin >> tempString;
+                if (check_number(tempString))
+                    insBelopp = stoi(tempString);
+                else {
+                    cout << "Du måste ange belopp med siffror och utan decimaler!";
+                    cout << "\n\nTryck 0 för att komma vidare\n";
+                    cin >> tempString;
+                    break;
+                }
                 saldo = saldo + insBelopp;
                 cout << "\nDitt saldo är nu: ";
                 cout << saldo;
