@@ -15,7 +15,6 @@ Räntebetalningen räknar ut hur många månader det tar innan ett önskat måls
 utifrån angiven ränta, aktuellt saldo och storlek på månadsinsättningen. 
 */
 
-// SÅOJSOIJSÅOJÅSOJÅSOIJÅIJSOÅISJSÅOIJSÅOIJÅOSIJ
 
 #include <iostream>
 using namespace std;
